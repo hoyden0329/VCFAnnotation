@@ -18,8 +18,6 @@ An example vcf file data/Challenge_data (1).vcf is provided for testing purpose.
 
 To run from zip: unzip and open the "app.R" in RStudio. Click "Run App" button to run. 
 
-To run from Github: https://github.com/hoyden0329/VCFAnnotation.git
-
-`runGitHub( "VCFAnnotation", "hoyden0329")` 
+To run from Github: https://github.com/hoyden0329/VCFAnnotation.git (Note that due to the Github size limit, the Homo_sapiens.GRCh37.75.gtf needs to be downloaded separately from http://ftp.ensembl.org/pub/release-75/gtf/homo_sapiens/Homo_sapiens.GRCh37.75.gtf.gz; and the decompressed file need to be put under the data directory as VCFAnnotation\data\Homo_sapiens.GRCh37.75.gtf)
 
 To run from Shinyapps.io (free account, 25 hours usage limit per month; memory limit, cannot run large vcf files):  https://xiuhuang.shinyapps.io/VCFAnnotation/
