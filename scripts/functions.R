@@ -20,7 +20,7 @@ require("BSgenome.Hsapiens.1000genomes.hs37d5")
 if (!file.exists("data/Txdb.sqlite")) {
   if (!requireNamespace("GenomicFeatures", quietly = TRUE)) BiocManager::install("VariantAnnotation")
   require("GenomicFeatures")
-  Txdb <- makeTxDbFromEnsembl(organism="Homo sapiens", release=75, circ_seqs=DEFAULT_CIRC_SEQS, server="ensembldb.ensembl.org", username="anonymous", password=NULL, port=0L, tx_attrib=NULL)
+  #Txdb <- makeTxDbFromEnsembl(organism="Homo sapiens", release=75, circ_seqs=DEFAULT_CIRC_SEQS, server="ensembldb.ensembl.org", username="anonymous", password=NULL, port=0L, tx_attrib=NULL)
   #### Fix the 5' CDS Incomplete issue and regenerate the Txdb from scratch
   gtf <- fread("./data/Homo_sapiens.GRCh37.75.gtf", header = F, skip = "#", stringsAsFactors = F, na.strings = "")
   gtf2 <- gtf[V1 %in% c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "X", "Y", "MT")][, ':='(geneid = gsub(".*(ENSG\\d+).*", "\\1", V9), transcriptid = gsub(".*(ENST\\d+).*", "\\1", V9), exonnumber = ifelse(V3 == "transcript", "", gsub('.*exon_number \\"(\\d+)\\".*', "\\1", V9)))]
